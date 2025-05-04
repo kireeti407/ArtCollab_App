@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=filter_alt" />
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="edit-profile" id="edit">
+        <button id="editclose">close</button>
+        <h2>Edit Profile</h2>
+          <label for="profilePic">Profile Picture:</label>
+          <input type="file" id="profilePic" name="profilePic" accept="image/*" />
+      
+          <label for="displayName">Name:</label>
+          <input type="text" id="displayName" name="displayName" placeholder="Your name" required />
+      
+          <label for="bio">Bio:</label>
+          <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+      
+          <label for="skills">Skills/Expertise:</label>
+          <input style="margin-bottom: 10px;" type="text" id="skills" name="skills" placeholder="e.g. Painter, Digital Artist, Musician" />
+      
+          <button id="editprofile">Save</button>
+      </div>
+      
+
+    <div id="profile">
+        <button id="close" style="font-size: 1.2rem;">X</button>
+        <div style="padding-top: 50px; width: 100%;">
+            <div id="mainprofile"></div>
+            <b><p id="name"></p></b>
+        
+            <b><p >Bio:</p></b>
+            <div id="p-bio"></div>
+            <p ><b>Skills/Expertise:</b>&nbsp;<span id="p-skills"></span></p>
+            <button id="editbtn" style="margin-top: 20px;">Edit Profile</button>
+            <button id="logout" >Logout</button>
+            <button id="toggleThemeBtn">🌙 Dark Mode</button>
+        </div>
+    </div>
+
+    <div id="post">
+        <button id="post-btn" style="font-size: 1.2rem;">X</button>
+        <div style="display: flex; gap: 5px;justify-content: center;align-items: center;"><label for=""><b>select category: </b></label><select id="category">
+            <option value="painting">Painting</option>
+            <option value="music">Music</option>
+            <option value="digital-art">Digital Art</option>
+            <option value="writing">Writing</option>
+          </select>
+        </div>
+        <input type="text" name="" id="title" placeholder="Project title">
+        <textarea name="" id="discription" placeholder="Discription"></textarea>
+        <button id="posted">Post</button>
+
+    </div>
+    <header>  
+        <div id="image"><img src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?semt=ais_hybrid&w=740" alt="view profile" > &nbsp;<span style=" color: blue;" id="namefe"> </span></div> 
+        
+          <button id="post-project">Post-Project</button>
+    </header>
+    <main id="mai">
+        <div id="fillpos">
+        <h2 id="h2">Explore Collaborative Projects</h2>
+        <select id="categoryFilter">
+            <option value="all">All</option>
+            <option value="painting">Painting</option>
+            <option value="music">Music</option>
+            <option value="digital-art">Digital Art</option>
+            <option value="writing">Writing</option>
+          </select>
+          <button id="filter"><span class="material-symbols-outlined">filter_alt</span>filter</button>
+        </div>
+
+        <div id="main">
+
+        </div>
+        <!-- <div id="data-field">
+            <p>Painter field</p>
+            <div></div>
+            <p>musicians field</p>
+            <div></div>
+            <p>writers field</p>
+            <div></div>
+            <p>digital field</p>
+            <div></div>
+            <p>Artists field</p>
+            <div></div>
+        </div> -->
+    </main>
+    <footer>
+        <p style="display: flex;justify-content: center;gap: 5px;"> <a href="https://github.com/kireeti407"><img style="width: 25px; " src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/250px-GitHub_Invertocat_Logo.svg.png" alt=""></a><a href="https://www.linkedin.com/in/kireeti-sangala/"><img style="width: 25px;" src="https://cdn.vectorstock.com/i/500p/01/00/linkedin-icon-on-white-vector-22040100.jpg" alt=""></a></p>
+        <p>&copy; Kireeti</p>
+    </footer>
+</body>
+<script src="./dashboard.js" type="module"></script>
+</html>

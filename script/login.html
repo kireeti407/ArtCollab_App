@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/Auth.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit" id="submit-btn">Login</button>
+        <!-- <div class="social-login">
+          <p>Or sign in with:</p>
+          <button class="social-btn" id="l-s" >Login with Google</button>
+        </div> -->
+        <div class="toggle">
+          <p id="toggle-text">Don't have an account? <a id="toggleF" onclick="toggleForm()">Register here</a></p>
+        </div>
+      </div>
+</body>
+<script src="./Login.js" type="module"></script>
+</html>

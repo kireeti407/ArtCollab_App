@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #5a67d8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .social-login {
+    margin-top: 15px;
+  }
+
+  .social-btn {
+    background: #5a67d8;
+    color: white;
+    margin: 5px 0;
+  }
+
+  .toggle {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  .toggle a{
+    color: #5a67d8;
+    background-color: white;
+    cursor: pointer;
+  }
+
+
+  

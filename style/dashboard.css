@@ -1,0 +1,310 @@
+body {
+  background-color: #ffffff;
+  color: #111;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+*{
+    padding: 0%;
+    margin: 0%;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+#categoryFilter {
+  /* padding: 10px 20px; */
+  height: 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  width: 150px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+#fillpos{
+  display: flex;
+  gap: 20px;
+  margin: auto;
+  justify-content: center;
+
+}
+
+#profile{
+  position: absolute;
+   left: 0%;
+   width: 30%;
+   height: 100%;
+   display: none;
+}
+#profile>div{
+  align-items: center;
+   display: flex;
+   flex-direction: column;
+   
+   gap: 5px;
+   font-size: 1.2 rem;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   background-color: #f4f4f4;
+}
+#p-bio{
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  margin: 2px;
+}
+button{
+    width: 75px;
+    height: 30px;
+    background-color: #5a67d8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+#data-field{
+    font-size: 2.2rem;
+    text-align: center;
+}
+#close{
+    width:50px;
+    position: absolute;
+    right:0% ;
+}
+#post{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: absolute;
+    
+    gap: 20px;
+    top: 20%;
+    left: 25%;
+    
+    background-color: #f4f4f4;
+    margin: auto;
+    display: None;
+}
+#post-btn{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 50px;
+
+}
+#post input{
+    width: 80%;
+    padding: 10px;
+
+}
+#category{
+  
+  padding: 10px;
+}
+#post textarea{
+    padding: 10px;
+    width: 80%;
+    height: 30%;
+}
+footer{
+
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    font-size: 1.1rem;
+}
+#edit{
+    max-width: 60%;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    display: none;
+    position: absolute;
+    top: 4%;
+    left: 34%;
+    z-index: 1;
+    padding-bottom: 10px;
+  }
+  
+  #edit h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #edit label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  #edit input,
+  #edit textarea,
+  #edit button:last-child {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  #edit button:last-child {
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    margin: auto;
+    
+  }
+  
+  #edit button:hover {
+    background-color: #45a049;
+    
+  }
+  #editclose{
+    text-align: center;
+    background-color: #45a049;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    
+  }
+  #image{
+    height: 30px;
+    display: flex;
+    align-items: center;
+
+
+  }
+  #image img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  #mainprofile{
+    background-image: url("https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+  }
+  
+  
+  #mai{
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    margin: auto;
+    
+    
+  }
+  #h2{
+    text-align: center;
+  }
+  
+  #main {
+    margin: auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  #main >div {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+    /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+  }
+  
+  body.dark-mode #toggleThemeBtn {
+    background-color: #333;
+    color: #fff;
+  }
+
+  body.dark-mode #main>div{
+    background-color: #464545;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
+  body.dark-mode .heading{
+    color: #f5f5f5;
+  }
+  body.dark-mode header,body.dark-mode footer, body.dark-mode>#profile>div,body.dark-mode>#post,body.dark-mode>#edit{
+    background-color: #1b1b1b;
+  }
+  #filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width:420px){
+    #namefe{
+      font-size: 0.8rem;
+    }
+    #categoryFilter{
+      width: 30%;
+    }
+    header button{
+      width: 40px;
+      font-size: 0.5rem;
+    }
+    #profile{
+      position: fixed;
+      width: 50%;
+      height: 200%;
+      font-size:0.8rem;   
+    }
+    #profile button:nth-child(1),#post button:nth-child(1){
+      width: 30px;
+      font-size: 0.9rem;
+    }
+    #post{
+      font-size: 0.8rem;
+    }
+    #edit{
+      left: 25%;
+      width: 80%;
+    }
+    #mai,#h2,#categoryFilter,#filter{
+      font-size: 0.8rem;
+    }
+  }
+ 
