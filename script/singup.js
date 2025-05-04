@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded",()=>{
           let data={
             name,
             email,
+            img:"https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg",
             field:"N/A",
             bio:"N/A",
             skils:"N/A", 

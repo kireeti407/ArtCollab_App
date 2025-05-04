@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", async()=>{
     let projects=[]
     let usermail=''||localStorage.getItem("email")
     let filterd=document.getElementById("filter")
+    let profilepic=document.getElementById("profilePic")
     // let delet=document.getElementById("delete")
 
     //dark mode
@@ -83,6 +84,7 @@ window.addEventListener("DOMContentLoaded", async()=>{
         edit.style.display="none"
     })
     await onAuthStateChanged(auth,async (user)=>{
+        if(user){
             let res=await fetch("https://artcollab-app-default-rtdb.asia-southeast1.firebasedatabase.app/Profile.json")
              let data= await res.json()
              let email=Object.entries(data).map(([id,e])=>{
@@ -95,10 +97,18 @@ window.addEventListener("DOMContentLoaded", async()=>{
              let bi=document.getElementById("p-bio")
              let skill=document.getElementById("p-skills")
              let nam=document.getElementById("name")
+             let mainprofile=document.getElementById("mainprofile")
+             let himg=document.getElementById("himg")
+             himg.style.backgroundImage=`url("${mail.img}")`
+             mainprofile.style.backgroundImage=`url("${mail.img}")`
              nam.innerText=userd.name
              bi.innerText=userd.bio
              skill.innerText=userd.field
              fetchdata()
+        }
+        else{
+            window.location.href='../index.html'
+        }
             
     })
         logout.addEventListener("click",async()=>{
@@ -106,10 +116,35 @@ window.addEventListener("DOMContentLoaded", async()=>{
             window.location.href='../index.html'
         })
         editprofile.addEventListener("click",async()=>{
+
+            const file = document.getElementById("profilePic").files[0];
+            const formData = new FormData();
+      
+            formData.append("file", file);
+            formData.append("upload_preset", "jobportal"); // Replace with your unsigned preset
+      
+            let res1=await fetch("https://api.cloudinary.com/v1_1/dg931dlw7/image/upload", {
+              method: "POST",
+              body: formData
+            })
+            let data1=await res1.json()
+            // mainprofile.style.backgroundImage=`url("${data1.secure_url}")`
+            // himg.style.backgroundImage=`url("${data1.secure_url}")`
+            // .then(res => res.json())
+            // .then(data => {
+            //   console.log("Uploaded Image URL:", data.secure_url);
+              // Show image
+            //   const img = document.createElement("img");
+            //   img.src = data.secure_url;
+            //   document.body.appendChild(img);
+            // })
+            // .catch(err => console.error("Upload Error:", err));
+
             let displayName=document.getElementById("displayName").value
             let bio=document.getElementById("bio").value
             let skills=document.getElementById("skills").value
             let data={
+                img:(file)?data1.secure_url:userd.img,
                 name:(displayName)?displayName:userd.name,
                 bio:(bio)?bio:userd.bio,
                 field:(skills)?skills:userd.field
@@ -124,9 +159,14 @@ window.addEventListener("DOMContentLoaded", async()=>{
              let bi=document.getElementById("p-bio")
              let skill=document.getElementById("p-skills")
              let nam=document.getElementById("name")
+             let mainprofile=document.getElementById("mainprofile")
+            let himg=document.getElementById("himg")
+             himg.style.backgroundImage=`url("${bdata.img}")`
+             mainprofile.style.backgroundImage=`url("${bdata.img}")`
              nam.innerText=bdata.name
              bi.innerText=bdata.bio
              skill.innerText=bdata.field
+             
              localStorage.setItem("user",JSON.stringify(bdata))
              edit.style.display="none"
         })
@@ -174,10 +214,17 @@ window.addEventListener("DOMContentLoaded", async()=>{
                         button.addEventListener("click",async()=>{
                         await fetch(`https://artcollab-app-default-rtdb.asia-southeast1.firebasedatabase.app/Projects/${e.id}.json`,{
                                     method:"DELETE"
-                            })        
+                            })
+                            fetchdata()
                     })
+                    
                     button.value=e.id
                     button.innerText="Delete"
+                    div.appendChild(button)
+                }
+                else{
+                    let button=document.createElement("button")
+                    button.innerText="feedback"
                     div.appendChild(button)
                 }
                 main.appendChild(div)
