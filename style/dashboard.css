@@ -116,7 +116,8 @@ button{
     height: 30%;
 }
 footer{
-
+    position: static;
+    bottom: 0%;
     margin: auto;
     text-align: center;
     display: flex;
@@ -200,13 +201,20 @@ footer{
 
 
   }
-  #image img{
-    width: 50px;
-    height: 50px;
+  #image #himg{
+    width: 40px;
+    height: 40px;
     cursor: pointer;
   }
-  #mainprofile{
+  #himg{
     background-image: url("https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg");
+    height: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+  }
+  #mainprofile{
+    /* background-image: url("https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
