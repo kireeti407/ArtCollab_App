@@ -73,7 +73,15 @@ window.addEventListener("DOMContentLoaded",async()=>{
         main.innerHTML=''
         projects.forEach((e)=>{
             let div=document.createElement("div")
-            div.innerHTML=`
+            if(e.img){
+                let p=document.createElement("img")
+                p.src=e.img
+                p.style.width="50px"
+                p.style.borderRadius="50px"
+                div.appendChild(p)
+            }
+            div.innerHTML+=`
+                 <span><b>Name: </b>${e.name}</span>
                 <span><b>Title: </b>${e.title}</span>
                 <span><b>Catgory: </b>${e.category}</span>
                 <p><b>Discription :</b></p>
@@ -84,4 +92,5 @@ window.addEventListener("DOMContentLoaded",async()=>{
     }
     fetchdata()
 })
+
 

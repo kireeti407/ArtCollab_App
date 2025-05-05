@@ -274,7 +274,11 @@ footer{
   body.dark-mode .heading{
     color: #f5f5f5;
   }
-  body.dark-mode header,body.dark-mode footer, body.dark-mode>#profile>div,body.dark-mode>#post,body.dark-mode>#edit{
+  body.dark-mode #card{
+    color: white;
+  }
+
+  body.dark-mode header,body.dark-mode footer, body.dark-mode>#profile>div,body.dark-mode>#post,body.dark-mode>#edit,body.dark-mode .profile-card{
     background-color: #1b1b1b;
   }
   #filter{
@@ -282,6 +286,68 @@ footer{
     justify-content: center;
     align-items: center;
   }
+
+  #card{
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #cardc{
+    position: absolute;
+    right: 0%;
+    width: 50px;
+    top: 0%;
+  }
+  .profile-card {
+    display: none;
+    width: 30%;
+    position: fixed;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #fdfdfd;
+    padding-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    
+    
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ccc;
+  }
+  
+  .profile-info {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .profile-name {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .profile-bio {
+    margin: 10px 0;
+    
+  }
+  #projectbutton{
+    display: flex;
+    gap: 20px;
+ }
+
+
 
   @media (max-width:420px){
     #namefe{
@@ -311,8 +377,18 @@ footer{
       left: 25%;
       width: 80%;
     }
-    #mai,#h2,#categoryFilter,#filter{
+    .profile-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+    .profile-name {
+      margin: 0;
+      font-size: 16px;
+    }
+    #mai,#h2,#categoryFilter,#filter, .profile-card{
       font-size: 0.8rem;
     }
   }
+  
  

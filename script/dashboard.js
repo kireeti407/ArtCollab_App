@@ -57,9 +57,12 @@ window.addEventListener("DOMContentLoaded", async()=>{
         let discription=document.getElementById("discription").value
         let category=document.getElementById("category").value
         let data={
+            
             title,
             discription,
             category,
+            uid:userd.id,
+            img:userd.img,
             name:userd.name,
             email:userd.email
         }
@@ -121,25 +124,13 @@ window.addEventListener("DOMContentLoaded", async()=>{
             const formData = new FormData();
       
             formData.append("file", file);
-            formData.append("upload_preset", "jobportal"); // Replace with your unsigned preset
+            formData.append("upload_preset", "jobportal"); 
       
             let res1=await fetch("https://api.cloudinary.com/v1_1/dg931dlw7/image/upload", {
               method: "POST",
               body: formData
             })
             let data1=await res1.json()
-            // mainprofile.style.backgroundImage=`url("${data1.secure_url}")`
-            // himg.style.backgroundImage=`url("${data1.secure_url}")`
-            // .then(res => res.json())
-            // .then(data => {
-            //   console.log("Uploaded Image URL:", data.secure_url);
-              // Show image
-            //   const img = document.createElement("img");
-            //   img.src = data.secure_url;
-            //   document.body.appendChild(img);
-            // })
-            // .catch(err => console.error("Upload Error:", err));
-
             let displayName=document.getElementById("displayName").value
             let bio=document.getElementById("bio").value
             let skills=document.getElementById("skills").value
@@ -197,13 +188,26 @@ window.addEventListener("DOMContentLoaded", async()=>{
             projects=project
             display(project)
         }
+        let cardc=document.getElementById("cardc")
+        let card=document.getElementById("card")
+        cardc.addEventListener("click",()=>{
+            card.style.display="none"
+        })
 
         function display(project){
             main.innerHTML=''
             project.forEach((e)=>{
                 let div=document.createElement("div")
                 //let button=(e.email==usermail)?`<button value="${e.id}" id="delete">Delete</button>`:''
-                div.innerHTML=`
+                if(e.img){
+                    let p=document.createElement("img")
+                    p.src=e.img
+                    p.style.width="50px"
+                    p.style.borderRadius="50%"
+                    div.appendChild(p)
+                }
+                div.innerHTML+=`
+                    <span><b>Name: </b>${e.name}</span>
                     <span><b>Title: </b>${e.title}</span>
                     <span><b>Catgory: </b>${e.category}</span>
                     <p><b>Discription :</b></p>
@@ -223,9 +227,29 @@ window.addEventListener("DOMContentLoaded", async()=>{
                     div.appendChild(button)
                 }
                 else{
+                    let button2=document.createElement("button")
+                    button2.innerText="see profile"
+                    button2.addEventListener("click",async()=>{
+                        let card=document.getElementById("card")
+                        card.style.display="flex"
+                        let proimg=document.getElementById("proimg")
+                        let pname=document.getElementById("pname")
+                        let pbio=document.getElementById("pbio")
+                        let pskills=document.getElementById("pskills")
+                            let res=await fetch(`https://artcollab-app-default-rtdb.asia-southeast1.firebasedatabase.app/Profile/${e.uid}.json`)
+                            let data=await res.json()
+                            proimg.src=data.img
+                            pname.innerText=data.name
+                            pbio.innerText=data.bio
+                            pskills.innerText=data.field
+                        button2.href="#card"
+                    })
                     let button=document.createElement("button")
                     button.innerText="feedback"
-                    div.appendChild(button)
+                    let div2=document.createElement("div")
+                    div2.append(button,button2)
+                    div2.id="projectbutton"
+                    div.appendChild(div2)
                 }
                 main.appendChild(div)
             })
@@ -237,6 +261,7 @@ window.addEventListener("DOMContentLoaded", async()=>{
         console.log(err)
     }
 })
+
 
 
 
